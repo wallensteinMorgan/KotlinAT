@@ -3,15 +3,14 @@ package ui.base
 import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide.closeWebDriver
 import io.github.bonigarcia.wdm.WebDriverManager
-import org.junit.jupiter.api.AfterAll
+
 import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.TestInstance
 import ui.util.ModalHelper
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-abstract class BaseTest {
+abstract class BasePage {
     private fun setUp(){
         WebDriverManager.chromedriver().setup()
         Configuration.browser = "chrome"

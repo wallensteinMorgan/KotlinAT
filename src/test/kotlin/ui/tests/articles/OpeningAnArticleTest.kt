@@ -1,15 +1,15 @@
-package tests.articles
+package ui.tests.articles
 
 import org.junit.jupiter.api.Test
-import ui.base.BaseTest
+import ui.base.BasePage
 import ui.pages.MainPage
 
 import kotlin.test.assertEquals
 
-class OpeningAnArticleTest: BaseTest() {
+class OpeningAnArticleTest: BasePage() {
 @Test
 fun openingAnArticle() {
-    val mainPage = MainPage()
+    val mainPage = MainPage().openPage()
     val expectedTitle = mainPage.getFirstArticleTitle()
     val articlePage = mainPage.openFirstArticle()
     val actualTitle = articlePage.getArticleTitle()

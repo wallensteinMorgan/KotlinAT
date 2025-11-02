@@ -1,11 +1,11 @@
-package uiPage
+package ui.pages
 
 import com.codeborne.selenide.Condition.empty
 import com.codeborne.selenide.Condition.visible
 import com.codeborne.selenide.Selenide.`$x`
-import data.AppData.Locators.ARTICLE_AUTHOR
-import data.AppData.Locators.ARTICLE_DATE
-import data.AppData.Locators.ARTICLE_TITLE
+import ui.data.AppData.Locators.ARTICLE_AUTHOR
+import ui.data.AppData.Locators.ARTICLE_DATE
+import ui.data.AppData.Locators.ARTICLE_TITLE
 
 
 class ArticlePage {

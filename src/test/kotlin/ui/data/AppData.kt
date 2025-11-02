@@ -1,4 +1,4 @@
-package data
+package ui.data
 
 object AppData {
     object Urls {
@@ -15,15 +15,14 @@ object AppData {
         const val PAGINATION_ELEMENT ="//span[@class='pagination-text']"
 
         // карточки статей и их элементов
-        const val ARTICLE_TITLE = ".//h2[contains(@class, 'entry-title')]//a[@rel='bookmark']"
+        const val ARTICLE_TITLE = ".//article" // для проверки состояния всей карточки (заголовок, автор, дата)
         const val ARTICLE_DATE = ".//time"
+        const val ARTICLE_TITLE_NAME = ".//a[@rel='bookmark']" // для проверки названия статьи
         const val ARTICLE_AUTHOR = ".//span[@class='entry-author']"
         const val READ_NEXT = "//a[contains(text(), 'Читать далее')]"
-        const val ARTICLE_TITLE_LINKS = "//h2[@class='entry-title']/a"
+        const val ARTICLE_TITLE_LINKS = "//a[@rel='bookmark']" // для проверки href
 
 
-        //элементы на странице статей
-        const val ARTICLE_PAGE_TITLE = "//h1"
 
     }
 }

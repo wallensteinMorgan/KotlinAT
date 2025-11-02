@@ -1,23 +1,23 @@
-package uiPage
+package ui.pages
 
 import com.codeborne.selenide.CollectionCondition.sizeGreaterThan
 import com.codeborne.selenide.Condition.visible
 import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selectors.byXpath
 import com.codeborne.selenide.Selenide.*
-import data.AppData.Locators.ARTICLE_TITLE
-import data.AppData.Locators.IPHONE_17_MENU_ITEM
-import data.AppData.Locators.PAGINATION_ELEMENT
+import ui.base.BasePage
+import ui.data.AppData.Locators.ARTICLE_TITLE
+import ui.data.AppData.Locators.IPHONE_17_MENU_ITEM
+import ui.data.AppData.Locators.PAGINATION_ELEMENT
 
-import data.AppData.Locators.SEARCH_INPUT
-import data.AppData.Urls.BASE_URL
+import ui.data.AppData.Locators.SEARCH_INPUT
+import ui.data.AppData.Urls.BASE_URL
 /**
  * Главная страница appleinsider.ru
  */
 
-class MainPage
+class MainPage : BasePage(){
 
-{
     private val searchElement  = `$`(byXpath(SEARCH_INPUT))
     private val iphone17Menu  = `$`(byXpath( IPHONE_17_MENU_ITEM))
     private val articleCards : ElementsCollection = `$$`(byXpath(ARTICLE_TITLE))
@@ -30,13 +30,14 @@ class MainPage
         open(BASE_URL)
         searchElement.shouldBe(visible)
         iphone17Menu.shouldBe(visible)
+        handleModals()
         return this
     }
 
     /**
      * Выполняется поиск на сайте в форме( поисковая строка) и нажимается энтер
      */
-    fun clickOnSearch  (searchString : String ): SearchResultsPage {
+    fun searchFor  (searchString : String ): SearchResultsPage {
         searchElement.setValue(searchString).pressEnter()
         return SearchResultsPage()
     }
@@ -56,12 +57,8 @@ class MainPage
         articleCards.first().shouldBe(visible).click()
         return ArticlePage()
     }
-    fun getAllArticleTitlesFromMain(): List<String> {
-        articleCards.shouldHave(sizeGreaterThan(0))
-        return articleCards.map { it.text() }
-    }
 
-    fun scrollToTheEndOfThePage() : MainPage{
+    fun scrollToTheEndOfThePage() : MainPage {
         paginationElement.scrollTo()
         return this
     }
@@ -69,9 +66,12 @@ class MainPage
         paginationElement.shouldBe(visible).click()
         return this
     }
-    fun goToNextPage () : MainPage{
-        paginationElement.shouldBe(visible).click()
-        return this
+    fun getAllArticleTitles() : List<String> {
+        articleCards.shouldHave(sizeGreaterThan(0))
+        return articleCards.map { it.text() }
+    }
+    fun currentUrlContains(param: String) : Boolean {
+        return webdriver().driver().url().contains(param)
     }
 
 

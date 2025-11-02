@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68596fa2-e246-46e7-a34d-33fda820fbea" name="Changes" comment="" />
+    <list default="true" id="68596fa2-e246-46e7-a34d-33fda820fbea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/data/AppData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/ColorsData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/RegistrationUser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/SuccessRegistrationUser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UnSuccessRegistrationUser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UserData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/spec/RequestSpec.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/spec/ResponseSpec.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/UserTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/base/BasePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/base/BasePage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/data/AppData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/data/AppData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/pages/ArticlePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/pages/ArticlePage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/pages/Iphone17Page.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/pages/Iphone17Page.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/pages/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/pages/MainPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/pages/SearchResultsPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/pages/SearchResultsPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/OpeningAnArticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/OpeningAnArticleTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/PaginationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/PaginationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/navigation/MenuNavigationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/navigation/MenuNavigationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/search/SearchTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/search/SearchTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/util/ModalHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/util/ModalHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCase1" beforeDir="false" afterPath="$PROJECT_DIR$/testCase1" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,27 +45,204 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="34Vm8GPtUa7I2trFBYxxnBO11Rg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;selenium.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\kotlin\src\test\kotlin\tests\search" />
+      <recent name="E:\kotlin\src\test\kotlin\uiTests" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="api.pojo" />
+      <recent name="tests.articles" />
+      <recent name="tests.navigation" />
+      <recent name="ui.base" />
+      <recent name="base" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.UserTest.sortedYearsTest">
+    <configuration name="UserTest.sortedYearsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;api.tests.UserTest.sortedYearsTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.successDeleteUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;api.tests.UserTest.successDeleteUserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.successRegistrationUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;api.tests.UserTest.successRegistrationUserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.successUpdateUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;api.tests.UserTest.successUpdateUserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.unSuccessRegistrationUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;api.tests.UserTest.unSuccessRegistrationUserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.UserTest.sortedYearsTest" />
+        <item itemvalue="Gradle.UserTest.unSuccessRegistrationUserTest" />
+        <item itemvalue="Gradle.UserTest.successRegistrationUserTest" />
+        <item itemvalue="Gradle.UserTest.successDeleteUserTest" />
+        <item itemvalue="Gradle.UserTest.successUpdateUserTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,8 +251,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761306954743</updated>
-      <workItem from="1761306955761" duration="1000" />
+      <workItem from="1761306955761" duration="624000" />
+      <workItem from="1761428819423" duration="4454000" />
+      <workItem from="1761749544162" duration="44532000" />
+      <workItem from="1761990849675" duration="22795000" />
+      <workItem from="1762074604857" duration="4724000" />
+      <workItem from="1762081310507" duration="11801000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

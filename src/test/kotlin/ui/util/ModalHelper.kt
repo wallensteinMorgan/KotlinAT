@@ -1,10 +1,12 @@
-package util
+package ui.util
 
+import com.codeborne.selenide.Condition
 import com.codeborne.selenide.Condition.visible
 import com.codeborne.selenide.Selectors.byXpath
 import com.codeborne.selenide.Selenide.`$`
-import data.AppData.Locators.COOKIE_CONSENT_BUTTON
+import ui.data.AppData.Locators.COOKIE_CONSENT_BUTTON
 import java.time.Duration
+
 
 
 object  ModalHelper {
@@ -13,14 +15,10 @@ object  ModalHelper {
 
     fun handleConsentModal() {
         val modal = `$`(byXpath(consentInModal))
-
-        // Проверяем, существует ли элемент и виден ли он
-        if (modal.exists() && modal.isDisplayed) {
-            // Ждем видимость до 5 секунд и кликаем
-            modal.shouldBe(visible, Duration.ofSeconds(5)).click()
-            println("Consent modal clicked")
+        if (modal.exists()) {
+            modal.shouldBe(visible, Duration.ofSeconds(10)).click()
         } else {
-            println("Consent modal not found or already closed, continue test")
+            println("Согласие не требуется, продолжаем тест")
         }
     }
 }
