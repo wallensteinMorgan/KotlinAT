@@ -2,5 +2,5 @@ package api.pojo
 
 data class SuccessRegistrationUser(
     val  id : Int,
-    val  token : String
+    val  token : String,
 )

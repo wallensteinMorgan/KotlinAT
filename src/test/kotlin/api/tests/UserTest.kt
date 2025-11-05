@@ -7,7 +7,6 @@ import io.restassured.RestAssured.given
 import org.hamcrest.Matchers.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import java.util.stream.Collectors
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -18,13 +17,12 @@ class UserTest {
     @DisplayName("GET /Проверка аватара и Id")
     fun checkAvatarAndIdTest() {
         val users: List<UserData> = given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .get("/api/users?page=2")
             .then()
             .spec(ResponseSpec.responseSpecOK200())
             .log().all()
             .extract().body().jsonPath().getList("data", UserData::class.java)
-
         users.forEach{user ->
             assertTrue (user.avatar.contains(user.id.toString()))
             assertTrue(user.email.endsWith("@reqres.in"))
@@ -33,7 +31,7 @@ class UserTest {
     @Test
     @DisplayName("GET /Запрос пользователя по ID")
     fun checkSingleUserTest () { given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .get("/api/users/2")
             .then()
             .spec(ResponseSpec.responseSpecOK200())
@@ -45,7 +43,7 @@ class UserTest {
     @DisplayName("GET /Пользователь не найдет")
     fun checkUserNotFoundTest (){
         given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .get("/api/users/23")
             .then()
             .spec(ResponseSpec.responseSpecError404())
@@ -59,7 +57,7 @@ class UserTest {
             "morpheus",  "leader")
 
         given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .body(userRequest)
             .post("/api/users")
             .then()
@@ -79,7 +77,7 @@ class UserTest {
             "morpheus",  "zion resident")
 
         given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .body(userRequest)
             .put("/api/users/2")
             .then()
@@ -93,7 +91,7 @@ class UserTest {
     @DisplayName("DELETE /Успешное удаление пользователя по ID")
     fun successDeleteUserTest (){
         given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .delete("/api/users/2")
             .then()
             .spec(ResponseSpec.responseSpecDelete204())
@@ -106,7 +104,7 @@ class UserTest {
         val id = 4
         val token = "QpwL5tke4Pnpja7X4"
         val response: SuccessRegistrationUser = given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .body(userRequest)
             .post("/api/register")
             .then()
@@ -120,11 +118,12 @@ class UserTest {
         //далее сложные проверки response по необходимости, валидации и т.д.
     }
     @Test
+    @DisplayName("POST /Не валидная регистрация пользователя")
     fun unSuccessRegistrationUserTest(){
         val userRequest = RegistrationUser("sydney@fife", "")
 
         val response: UnSuccessRegistrationUser = given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .body(userRequest)
             .post("/api/register")
             .then()
@@ -135,9 +134,10 @@ class UserTest {
         //далее сложные проверки response по необходимости, валидации и т.д.
     }
     @Test
+    @DisplayName("GET /Сортировка списка цветов по годам")
     fun sortedYearsTest(){
         val colors: List<ColorsData> = given()
-            .spec(RequestSpec.baseSpec())
+            .spec(RequestSpec.baseRequestSpec())
             .get("/api/unknown")
             .then()
             .spec(ResponseSpec.responseSpecOK200())

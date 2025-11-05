@@ -1,5 +1,6 @@
 package ui.tests.search
 
+import io.qameta.allure.Description
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import ui.base.BasePage
@@ -11,6 +12,7 @@ const val SEARCH_STRING  = "Чем iPhone 13 отличается от iPhone 12
 const val KEY_WORD = "iphone-13"
 class SearchTest : BasePage() {
     @Test
+    @Description("Поиск по запросу")
     fun checkHref() {
         val href = MainPage().openPage().searchFor(SEARCH_STRING)
             .getHrefFirstArticle() ?: ""
@@ -19,6 +21,7 @@ class SearchTest : BasePage() {
     }
 
     @Test
+    @Description("Поиск по запросу и проверка, что статьи, полученные в результате запроса имеют название, автора и дату публикации")
     fun searchArticles() {
         val result = MainPage().openPage().searchFor(TEXT_FOR_SEARCH)
             .getArticlesTitleDateAuthor()

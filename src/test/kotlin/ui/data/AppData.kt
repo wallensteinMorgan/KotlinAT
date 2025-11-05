@@ -1,10 +1,6 @@
 package ui.data
 
 object AppData {
-    object Urls {
-        const val BASE_URL = "https://appleinsider.ru"
-
-    }
     object Locators {
         // для модалки
         const val COOKIE_CONSENT_BUTTON = "//button[.//p[contains(text(), 'Согласиться')]]"

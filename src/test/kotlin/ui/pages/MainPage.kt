@@ -11,7 +11,6 @@ import ui.data.AppData.Locators.IPHONE_17_MENU_ITEM
 import ui.data.AppData.Locators.PAGINATION_ELEMENT
 
 import ui.data.AppData.Locators.SEARCH_INPUT
-import ui.data.AppData.Urls.BASE_URL
 /**
  * Главная страница appleinsider.ru
  */
@@ -27,7 +26,7 @@ class MainPage : BasePage(){
      * Открываем главную страницу
      */
     fun openPage() : MainPage {
-        open(BASE_URL)
+        openBasePage()
         searchElement.shouldBe(visible)
         iphone17Menu.shouldBe(visible)
         handleModals()

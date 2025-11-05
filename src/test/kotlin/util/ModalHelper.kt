@@ -1,6 +1,5 @@
-package ui.util
+package util
 
-import com.codeborne.selenide.Condition
 import com.codeborne.selenide.Condition.visible
 import com.codeborne.selenide.Selectors.byXpath
 import com.codeborne.selenide.Selenide.`$`
