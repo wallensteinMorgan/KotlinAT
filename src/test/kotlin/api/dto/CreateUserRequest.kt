@@ -1,4 +1,4 @@
-package api.pojo
+package api.dto
 
 data class CreateUserRequest(
     val name: String,

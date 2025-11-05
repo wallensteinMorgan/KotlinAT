@@ -24,6 +24,7 @@ dependencies {
     testImplementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
     testImplementation("org.hamcrest:hamcrest:2.2")
     testImplementation("io.rest-assured:kotlin-extensions:5.3.0")
+    testImplementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2")
     //allure
     testImplementation("io.qameta.allure:allure-junit5:2.27.0")
     testImplementation("io.qameta.allure:allure-commandline:2.27.0")

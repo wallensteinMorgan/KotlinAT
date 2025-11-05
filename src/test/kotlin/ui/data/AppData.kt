@@ -17,8 +17,5 @@ object AppData {
         const val ARTICLE_AUTHOR = ".//span[@class='entry-author']"
         const val READ_NEXT = "//a[contains(text(), 'Читать далее')]"
         const val ARTICLE_TITLE_LINKS = "//a[@rel='bookmark']" // для проверки href
-
-
-
     }
 }

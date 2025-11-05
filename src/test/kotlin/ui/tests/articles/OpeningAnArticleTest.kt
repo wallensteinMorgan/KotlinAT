@@ -2,10 +2,9 @@ package ui.tests.articles
 
 import io.qameta.allure.Description
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 import ui.base.BasePage
 import ui.pages.MainPage
-import util.TestListener
+
 
 import kotlin.test.assertEquals
 

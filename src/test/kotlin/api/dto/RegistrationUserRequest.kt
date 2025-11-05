@@ -1,6 +1,6 @@
-package api.pojo
+package api.dto
 
-data class RegistrationUser(
+data class RegistrationUserRequest(
     val  email : String,
     val  password : String,
 )

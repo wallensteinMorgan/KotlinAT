@@ -10,10 +10,11 @@ class PaginationTest : BasePage(){
     @Test
     @Description("Проверка пагинации и что на второй странице статьи отличаются от первой")
     fun paginationTest(){
-        MainPage().openPage().scrollToTheEndOfThePage()
-        val firstPageTitle = MainPage().getAllArticleTitles()
-        MainPage().openNextPage()
-        val secondPageTitle = MainPage().getAllArticleTitles()
+        val mainPage  = MainPage().openPage()
+        mainPage.scrollToTheEndOfThePage()
+        val firstPageTitle = mainPage.getAllArticleTitles()
+        mainPage.openNextPage()
+        val secondPageTitle = mainPage.getAllArticleTitles()
 
         assertTrue(firstPageTitle != secondPageTitle, "Статьи совпадают")
         assertTrue(MainPage().currentUrlContains("page/2"), "URL не содержит параметр page/2")

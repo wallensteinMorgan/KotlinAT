@@ -10,8 +10,11 @@ import ui.data.AppData.Locators.ARTICLE_DATE
 import ui.data.AppData.Locators.ARTICLE_TITLE
 import ui.data.AppData.Locators.ARTICLE_TITLE_LINKS
 import ui.data.AppData.Locators.ARTICLE_TITLE_NAME
+import java.time.Duration
 
-data class ArticleData(val title: String, val author: String, val date: String)
+data class ArticleData(val title: String,
+                       val author: String,
+                       val date: String)
 
 class SearchResultsPage {
     private val articleTail : ElementsCollection = Selenide.`$$`(byXpath(ARTICLE_TITLE_LINKS))
@@ -23,14 +26,16 @@ class SearchResultsPage {
        return articleTail.first().getAttribute("href")
     }
     fun getArticlesTitleDateAuthor() : List<ArticleData> {
+        articleCard.first().shouldBe(visible, Duration.ofSeconds(10))
         articleCard.shouldHave(sizeGreaterThan(0))
 
         return articleCard.map { card ->
             val titleElement = card.find(byXpath(ARTICLE_TITLE_NAME)).shouldBe(visible).text().trim()
-            val dateElement = card.find(byXpath(ARTICLE_DATE)).shouldBe(visible).text().trim()
             val authorElement = card.find(byXpath(ARTICLE_AUTHOR)).shouldBe(visible).text().trim()
+            val dateElement = card.find(byXpath(ARTICLE_DATE)).shouldBe(visible).text().trim()
 
-            ArticleData( titleElement, dateElement, authorElement)
+
+            ArticleData( titleElement,authorElement, dateElement)
         }
     }
 }

@@ -9,15 +9,12 @@ import io.qameta.allure.selenide.AllureSelenide
 
 
 import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.TestInstance
 import util.Config
 import util.ModalHelper
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 abstract class BasePage {
-    private fun setUp(){
+    private fun setUpAll(){
         WebDriverManager.chromedriver().setup()
         Configuration.baseUrl = Config.get("baseUrl")
         Configuration.browser = Config.get("browser")
@@ -31,7 +28,7 @@ abstract class BasePage {
     }
         @BeforeEach
         fun init() {
-            setUp()
+            setUpAll()
         }
         @AfterEach
         fun tearDown() {

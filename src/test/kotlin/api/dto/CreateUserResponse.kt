@@ -1,4 +1,4 @@
-package api.pojo
+package api.dto
 
 import java.time.Instant
 

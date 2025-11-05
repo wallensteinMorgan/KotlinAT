@@ -1,4 +1,4 @@
-package api.pojo
+package api.dto
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
@@ -7,6 +7,5 @@ data class ColorsData(
     val name : String,
     val year : Int,
     val color: String,
-    @JsonProperty("pantone_value")
-    val pantoneValue : String,
+    @JsonProperty("pantone_value") val pantoneValue : String,
 )

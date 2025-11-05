@@ -10,12 +10,13 @@ import ui.pages.MainPage
 const val TEXT_FOR_SEARCH = "iPhone 15 Pro"
 const val SEARCH_STRING  = "Чем iPhone 13 отличается от iPhone 12"
 const val KEY_WORD = "iphone-13"
+
 class SearchTest : BasePage() {
     @Test
     @Description("Поиск по запросу")
     fun checkHref() {
         val href = MainPage().openPage().searchFor(SEARCH_STRING)
-            .getHrefFirstArticle() ?: ""
+            .getHrefFirstArticle() ?: throw AssertionError("href не найден")
 
         assertTrue(href.contains(KEY_WORD))
     }

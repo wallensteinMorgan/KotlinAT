@@ -5,32 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68596fa2-e246-46e7-a34d-33fda820fbea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/util/Config.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/util/TestListener.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/clients/ApiClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/RegistrationSuccessUserResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/endpoints/Endpoints.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/testdata/TestData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/utils/ColorsApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/utils/RegistrationApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/utils/UserApi.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/data/AppData.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/ColorsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/ColorsData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/RegistrationUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/RegistrationUser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/SuccessRegistrationUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/SuccessRegistrationUser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UnSuccessRegistrationUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UnSuccessRegistrationUser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UserData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UserData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/ColorsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/ColorsData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/CreateUserRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/CreateUserResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/RegistrationUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/RegistrationUserRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/SuccessRegistrationUser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UnSuccessRegistrationUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/RegistrationErrorResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UserData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/UserData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/spec/RequestSpec.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/spec/RequestSpec.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/spec/ResponseSpec.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/spec/ResponseSpec.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/tests/UserTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/UserTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/base/BasePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/base/BasePage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/data/AppData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/data/AppData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/pages/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/pages/MainPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/pages/SearchResultsPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/pages/SearchResultsPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/OpeningAnArticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/OpeningAnArticleTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/PaginationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/PaginationTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/navigation/MenuNavigationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/navigation/MenuNavigationTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/search/SearchTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/search/SearchTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/util/ModalHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/util/ModalHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/util/TestListener.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +61,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -137,79 +137,7 @@
       <recent name="base" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserTest">
-    <configuration name="SearchTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.tests.search.SearchTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SearchTest.checkHref" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.tests.search.SearchTest.checkHref&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SearchTest.searchArticles" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.tests.search.SearchTest.searchArticles&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.kotlin [allureServe]">
     <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -234,6 +162,28 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="kotlin [allureReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="allureReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="kotlin [allureServe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -246,6 +196,50 @@
         <option name="taskNames">
           <list>
             <option value="allureServe" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="kotlin [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="kotlin [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -278,19 +272,19 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.kotlin" />
-      <item itemvalue="Gradle.SearchTest.searchArticles" />
+      <item itemvalue="Gradle.kotlin [allureReport]" />
       <item itemvalue="Gradle.kotlin [allureServe]" />
-      <item itemvalue="Gradle.SearchTest" />
+      <item itemvalue="Gradle.kotlin [clean]" />
+      <item itemvalue="Gradle.kotlin [test]" />
       <item itemvalue="Gradle.UserTest" />
-      <item itemvalue="Gradle.SearchTest.checkHref" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserTest" />
         <item itemvalue="Gradle.kotlin [allureServe]" />
-        <item itemvalue="Gradle.SearchTest" />
-        <item itemvalue="Gradle.SearchTest.checkHref" />
-        <item itemvalue="Gradle.SearchTest.searchArticles" />
+        <item itemvalue="Gradle.kotlin [allureReport]" />
+        <item itemvalue="Gradle.kotlin [test]" />
+        <item itemvalue="Gradle.kotlin [clean]" />
+        <item itemvalue="Gradle.UserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -323,7 +317,7 @@
       <workItem from="1762290345481" duration="593000" />
       <workItem from="1762293245636" duration="4910000" />
       <workItem from="1762298822779" duration="3725000" />
-      <workItem from="1762339924650" duration="5998000" />
+      <workItem from="1762339924650" duration="30072000" />
     </task>
     <servers />
   </component>
