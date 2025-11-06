@@ -10,11 +10,8 @@ node {
 
         stage("Debug Workspace") {
             echo "Workspace: ${env.WORKSPACE}"
-            if (isUnix()) {
-                sh "ls -la \"${env.WORKSPACE}\""
-            } else {
-                bat "dir \"${env.WORKSPACE}\""
-            }
+            // Для Windows
+            bat "dir \"${env.WORKSPACE}\""
         }
 
         stage("Checkout Branch") {
@@ -52,17 +49,11 @@ def getTestStages(testTags) {
 
 def runTestWithTag(String tag) {
     try {
-        if (isUnix()) {
-            sh """
-                cd "${env.WORKSPACE}"
-                ./gradlew ${tag}
-            """
-        } else {
-            bat """
-                cd /d "${env.WORKSPACE}"
-                gradlew.bat ${tag}
-            """
-        }
+        // На Windows используем gradlew.bat
+        bat """
+            cd /d "${env.WORKSPACE}"
+            gradlew.bat ${tag}
+        """
     } finally {
         echo "Finished tests for ${tag}"
     }
