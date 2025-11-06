@@ -44,7 +44,23 @@ tasks.test {
     }
     }
 
+tasks.register<Test>("apiTests") {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching("api.tests.*")
+        includeTestsMatching("api.*")
+    }
+    systemProperty("allure.results.directory", "${project.buildDir}/allure-results")
+}
 
+tasks.register<Test>("uiTests") {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching("ui.tests.*")
+        includeTestsMatching("ui.*")
+    }
+    systemProperty("allure.results.directory", "${project.buildDir}/allure-results")
+}
     kotlin {
         jvmToolchain(17)
     }
