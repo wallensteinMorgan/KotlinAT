@@ -1,95 +1,78 @@
-task_branch = "${TEST_BRANCH_NAME}"
+// Получаем имя ветки, если параметр TEST_BRANCH_NAME не задан — используем main
+def task_branch = env.TEST_BRANCH_NAME ?: "main"
 def branch_cutted = task_branch.contains("origin") ? task_branch.split('/')[1] : task_branch.trim()
-currentBuild.displayName = "$branch_cutted"
-base_git_url = "https://github.com/wallensteinMorgan/KotlinAT.git"
 
+currentBuild.displayName = branch_cutted
+def base_git_url = "https://github.com/wallensteinMorgan/KotlinAT.git"
 
 node {
     withEnv(["branch=${branch_cutted}", "base_url=${base_git_url}"]) {
+
         stage("Debug Workspace") {
             echo "Workspace: ${env.WORKSPACE}"
             if (isUnix()) {
-                // Linux / macOS агент
-                sh "ls -la ${env.WORKSPACE}"
+                sh "ls -la \"${env.WORKSPACE}\""
             } else {
-                // Windows агент
-                bat "dir ${env.WORKSPACE}"
+                bat "dir \"${env.WORKSPACE}\""
             }
         }
+
         stage("Checkout Branch") {
-            if (!"$branch_cutted".contains("main")) {
+            if (!branch_cutted.contains("main")) {
                 try {
-                    getProject("$base_git_url", "$branch_cutted")
+                    getProject(base_git_url, branch_cutted)
                 } catch (err) {
-                    echo "Failed get branch $branch_cutted"
-                    throw ("${err}")
+                    echo "Failed to get branch ${branch_cutted}"
+                    error("${err}")
                 }
             } else {
                 echo "Current branch is main"
             }
         }
 
-        try {
+        stage("Run Tests") {
             parallel getTestStages(["apiTests", "uiTests"])
-        } finally {
-            stage ("Allure") {
-                generateAllure()
-            }
         }
 
-//        try {
-//            stage("Run tests") {
-//                parallel(
-//                        'Api Tests': {
-//                            runTestWithTag("apiTests")
-//                        },
-//                        'Ui Tests': {
-//                            runTestWithTag("uiTests")
-//                        }
-//                )
-//            }
-//        } finally {
-//            stage("Allure") {
-//                generateAllure()
-//            }
-//        }
+        stage("Allure Report") {
+            generateAllure()
+        }
     }
 }
-
 
 def getTestStages(testTags) {
     def stages = [:]
     testTags.each { tag ->
-        stages["${tag}"] = {
+        stages[tag] = {
             runTestWithTag(tag)
         }
     }
     return stages
 }
 
-
 def runTestWithTag(String tag) {
     try {
-        labelledShell(label: "Run ${tag}",
-                script: """
-                cd ${env.WORKSPACE}
-                chmod +x ./gradlew
+        if (isUnix()) {
+            sh """
+                cd "${env.WORKSPACE}"
                 ./gradlew ${tag}
             """
-        )
+        } else {
+            bat """
+                cd /d "${env.WORKSPACE}"
+                gradlew.bat ${tag}
+            """
+        }
     } finally {
-        echo "some failed tests"
+        echo "Finished tests for ${tag}"
     }
 }
 
 def getProject(String repo, String branch) {
     cleanWs()
-    checkout scm: [
-            $class           : 'GitSCM', branches: [[name: branch]],
-            userRemoteConfigs: [[
-                                        url: repo
-                                ]]
-    ]
+    checkout([$class: 'GitSCM',
+              branches: [[name: branch]],
+              userRemoteConfigs: [[url: repo]]])
 }
 
 def generateAllure() {
