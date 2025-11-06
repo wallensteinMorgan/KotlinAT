@@ -56,15 +56,27 @@ def getTestStages(testTags) {
     }
     return stages
 }
-
-
 def runTestWithTag(String tag) {
     try {
-        labelledShell(label: "Run ${tag}", script: "chmod +x gradlew \n./gradlew -x test ${tag}")
-    } finally {
-        echo "some failed tests"
+        echo "Running ${tag} tests"
+        // Даем права на выполнение и запускаем gradlew
+        sh """
+            chmod +x ./gradlew
+            ./gradlew clean ${tag}
+        """
+    } catch (err) {
+        echo "Some tests failed in ${tag}: ${err}"
+        currentBuild.result = 'UNSTABLE'
     }
 }
+
+//def runTestWithTag(String tag) {
+//    try {
+//        labelledShell(label: "Run ${tag}", script: "chmod +x gradlew \n./gradlew -x test ${tag}")
+//    } finally {
+//        echo "some failed tests"
+//    }
+//}
 
 def getProject(String repo, String branch) {
     cleanWs()
