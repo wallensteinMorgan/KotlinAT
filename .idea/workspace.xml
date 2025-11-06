@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68596fa2-e246-46e7-a34d-33fda820fbea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/clients/ApiClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/RegistrationSuccessUserResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/endpoints/Endpoints.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/testdata/TestData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/utils/ColorsApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/utils/RegistrationApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/utils/UserApi.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/ColorsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/ColorsData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/CreateUserRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/CreateUserResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/CreateUserResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/RegistrationUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/RegistrationUserRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/SuccessRegistrationUser.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UnSuccessRegistrationUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/RegistrationErrorResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/pojo/UserData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dto/UserData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/spec/RequestSpec.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/spec/RequestSpec.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/spec/ResponseSpec.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/spec/ResponseSpec.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/tests/UserTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/UserTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/base/BasePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/base/BasePage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/data/AppData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/data/AppData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/pages/SearchResultsPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/pages/SearchResultsPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/OpeningAnArticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/OpeningAnArticleTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/PaginationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/articles/PaginationTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ui/tests/search/SearchTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ui/tests/search/SearchTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/util/TestListener.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +292,7 @@
       <workItem from="1762290345481" duration="593000" />
       <workItem from="1762293245636" duration="4910000" />
       <workItem from="1762298822779" duration="3725000" />
-      <workItem from="1762339924650" duration="30072000" />
+      <workItem from="1762339924650" duration="31087000" />
     </task>
     <servers />
   </component>
