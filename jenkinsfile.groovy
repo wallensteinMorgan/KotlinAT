@@ -1,38 +1,29 @@
-// Получаем имя ветки, если параметр TEST_BRANCH_NAME не задан — используем main
-def task_branch = env.TEST_BRANCH_NAME ?: "main"
+task_branch = "${TEST_BRANCH_NAME}"
 def branch_cutted = task_branch.contains("origin") ? task_branch.split('/')[1] : task_branch.trim()
-
-currentBuild.displayName = branch_cutted
-def base_git_url = "https://github.com/wallensteinMorgan/KotlinAT.git"
+currentBuild.displayName = "$branch_cutted"
+base_git_url = "https://github.com/wallensteinMorgan/KotlinAT.git"
 
 node {
     withEnv(["branch=${branch_cutted}", "base_url=${base_git_url}"]) {
-
-        stage("Debug Workspace") {
-            echo "Workspace: ${env.WORKSPACE}"
-            // Для Windows
-            bat "dir \"${env.WORKSPACE}\""
-        }
-
         stage("Checkout Branch") {
-            if (!branch_cutted.contains("main")) {
+            if (!"$branch_cutted".contains("main")) {
                 try {
-                    getProject(base_git_url, branch_cutted)
+                    getProject("$base_git_url", "$branch_cutted")
                 } catch (err) {
-                    echo "Failed to get branch ${branch_cutted}"
-                    error("${err}")
+                    echo "Failed get branch $branch_cutted"
+                    throw ("${err}")
                 }
             } else {
                 echo "Current branch is main"
             }
         }
 
-        stage("Run Tests") {
+        try {
             parallel getTestStages(["apiTests", "uiTests"])
-        }
-
-        stage("Allure Report") {
-            generateAllure()
+        } finally {
+            stage ("Allure") {
+                generateAllure()
+            }
         }
     }
 }
@@ -40,7 +31,7 @@ node {
 def getTestStages(testTags) {
     def stages = [:]
     testTags.each { tag ->
-        stages[tag] = {
+        stages["${tag}"] = {
             runTestWithTag(tag)
         }
     }
@@ -49,29 +40,39 @@ def getTestStages(testTags) {
 
 def runTestWithTag(String tag) {
     try {
-        // На Windows используем gradlew.bat
-        bat """
-            cd /d "${env.WORKSPACE}"
-            gradlew.bat ${tag}
-        """
-    } finally {
-        echo "Finished tests for ${tag}"
+        echo "Running ${tag} tests"
+
+        // Проверяем есть ли gradlew, если нет - используем системный gradle
+        if (fileExists('gradlew')) {
+            sh """
+                chmod +x ./gradlew
+                ./gradlew clean ${tag}
+            """
+        } else {
+            echo "gradlew not found, using system gradle"
+            sh "gradle clean ${tag}"
+        }
+    } catch (err) {
+        echo "Some tests failed in ${tag}: ${err}"
+        currentBuild.result = 'UNSTABLE'
     }
 }
 
 def getProject(String repo, String branch) {
     cleanWs()
-    checkout([$class: 'GitSCM',
-              branches: [[name: branch]],
-              userRemoteConfigs: [[url: repo]]])
+    checkout scm: [
+            $class: 'GitSCM',
+            branches: [[name: branch]],
+            userRemoteConfigs: [[url: repo]]
+    ]
 }
 
 def generateAllure() {
     allure([
             includeProperties: true,
-            jdk              : '',
-            properties       : [],
+            jdk: '',
+            properties: [],
             reportBuildPolicy: 'ALWAYS',
-            results          : [[path: 'build/allure-results']]
+            results: [[path: 'build/allure-results']]
     ])
 }
