@@ -1,40 +1,41 @@
-// Получаем ветку, если параметр TEST_BRANCH_NAME не задан — используем main
-def task_branch = env.TEST_BRANCH_NAME ?: "main"
+task_branch = "${TEST_BRANCH_NAME}"
 def branch_cutted = task_branch.contains("origin") ? task_branch.split('/')[1] : task_branch.trim()
-currentBuild.displayName = branch_cutted
-def base_git_url = "https://github.com/wallensteinMorgan/KotlinAT.git"
+currentBuild.displayName = "$branch_cutted"
 
 pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Checkout and Verify') {
             steps {
                 cleanWs()
                 checkout scm
+
                 script {
                     echo "=== WORKSPACE VERIFICATION ==="
-                    if (isUnix()) {
-                        sh """
-                            pwd
-                            ls -la
-                        """
-                    } else {
-                        bat "dir"
-                    }
+                    sh """
+                        pwd
+                        ls -la
+                        echo "Gradle wrapper exists: ${fileExists('gradlew')}"
+                        echo "Gradle bat exists: ${fileExists('gradlew.bat')}"
+                        echo "Gradle folder exists: ${fileExists('gradle/wrapper')}"
+                    """
                 }
+            }
+        }
+
+        stage('Setup Gradle') {
+            steps {
+                sh """
+                    chmod +x ./gradlew
+                    ./gradlew --version || echo "Gradle version check completed"
+                """
             }
         }
 
         stage('Clean Project') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh './gradlew clean --no-daemon'
-                    } else {
-                        bat 'gradlew.bat clean'
-                    }
-                }
+                sh './gradlew clean'
             }
         }
 
@@ -42,34 +43,13 @@ pipeline {
             parallel {
                 stage('API Tests') {
                     steps {
-                        script { runTestWithTag("apiTests") }
+                        runTestWithTag("apiTests")
                     }
                 }
                 stage('UI Tests') {
                     steps {
-                        script { runTestWithTag("uiTests") }
+                        runTestWithTag("uiTests")
                     }
-                }
-            }
-        }
-
-        stage('Allure Report') {
-            steps {
-                script {
-                    // Создаём папку на случай если тесты не создали
-                    if (isUnix()) {
-                        sh 'mkdir -p build/allure-results || true'
-                    } else {
-                        bat 'mkdir build\\allure-results || exit 0'
-                    }
-
-                    // Генерируем Allure
-                    allure([
-                            includeProperties: true,
-                            jdk: '',
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'build/allure-results']]
-                    ])
                 }
             }
         }
@@ -77,17 +57,23 @@ pipeline {
 
     post {
         always {
-            echo "=== COLLECTING TEST RESULTS ==="
-            // Сбор JUnit тестов для Jenkins
+            junit 'build/test-results/**/*.xml'
+
             script {
-                if (isUnix()) {
-                    junit 'build/test-results/**/*.xml'
-                } else {
-                    junit 'build\\test-results\\**\\*.xml'
-                }
+                sh 'mkdir -p build/allure-results || true'
+
+                sh 'find . -name "allure-results" -type d | head -5 || echo "No allure results directories found"'
+
+                allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'build/allure-results']]
+                ])
             }
 
-            // Лог финального результата
+            echo "=== BUILD COMPLETED ==="
             script {
                 if (currentBuild.result == 'UNSTABLE') {
                     echo "Some tests failed but build continued"
@@ -101,40 +87,23 @@ pipeline {
     }
 }
 
-// Вспомогательная функция для запуска тестов
 def runTestWithTag(String tag) {
     try {
         echo "Running ${tag} tests"
 
-        if (isUnix()) {
-            sh """
-                ./gradlew ${tag} \
+        sh """
+            ./gradlew ${tag} \
                 -Dallure.results.directory=build/allure-results \
                 --no-daemon \
                 --stacktrace \
                 --info
-            """
-        } else {
-            bat """
-                gradlew.bat ${tag} ^
-                -Dallure.results.directory=build\\allure-results ^
-                --no-daemon ^
-                --stacktrace ^
-                --info
-            """
-        }
+        """
 
     } catch (err) {
         echo "Some tests failed in ${tag}: ${err}"
         currentBuild.result = 'UNSTABLE'
 
-        // Создаём папку на случай если тесты не создали
-        if (isUnix()) {
-            sh 'mkdir -p build/allure-results || true'
-        } else {
-            bat 'mkdir build\\allure-results || exit 0'
-        }
-    } finally {
-        echo "Finished tests for ${tag}"
+        sh 'mkdir -p build/allure-results || true'
     }
 }
+
