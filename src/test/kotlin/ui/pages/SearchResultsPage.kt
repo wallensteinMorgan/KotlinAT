@@ -1,6 +1,7 @@
 package ui.pages
 
 import com.codeborne.selenide.CollectionCondition.sizeGreaterThan
+import com.codeborne.selenide.Condition
 import com.codeborne.selenide.Condition.visible
 import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selectors.byXpath
@@ -23,7 +24,9 @@ class SearchResultsPage {
      * Возвращает href из первой статьи
      */
     fun getHrefFirstArticle(): String? {
-       return articleTail.first().getAttribute("href")
+        return articleTail.first()
+            .shouldBe(Condition.visible, Duration.ofSeconds(10))
+            .getAttribute("href")
     }
     fun getArticlesTitleDateAuthor() : List<ArticleData> {
         articleCard.first().shouldBe(visible, Duration.ofSeconds(10))
