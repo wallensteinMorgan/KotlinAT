@@ -8,10 +8,13 @@ node {
     withEnv(["branch=${branch_cutted}", "base_url=${base_git_url}"]) {
         stage("Debug Workspace") {
             echo "Workspace: ${env.WORKSPACE}"
-            // Для Windows-агента
-            bat "dir ${env.WORKSPACE}"
-            // Для Linux-агента
-            // sh "ls -la ${env.WORKSPACE}"
+            if (isUnix()) {
+                // Linux / macOS агент
+                sh "ls -la ${env.WORKSPACE}"
+            } else {
+                // Windows агент
+                bat "dir ${env.WORKSPACE}"
+            }
         }
         stage("Checkout Branch") {
             if (!"$branch_cutted".contains("main")) {
