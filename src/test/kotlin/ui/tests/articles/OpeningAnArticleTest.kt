@@ -1,13 +1,14 @@
 package ui.tests.articles
 
 import io.qameta.allure.Description
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import ui.base.BasePage
 import ui.pages.MainPage
 
 
 import kotlin.test.assertEquals
-
+@Tag("uiTests")
 class OpeningAnArticleTest: BasePage() {
 @Test
 @Description("Открывается первая статья на главной странице и проводится сравнение заголовков")

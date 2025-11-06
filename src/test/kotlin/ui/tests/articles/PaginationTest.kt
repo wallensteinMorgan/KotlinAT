@@ -1,11 +1,12 @@
 package ui.tests.articles
 
 import io.qameta.allure.Description
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import ui.base.BasePage
 import ui.pages.MainPage
 import kotlin.test.assertTrue
-
+@Tag("uiTests")
 class PaginationTest : BasePage(){
     @Test
     @Description("Проверка пагинации и что на второй странице статьи отличаются от первой")

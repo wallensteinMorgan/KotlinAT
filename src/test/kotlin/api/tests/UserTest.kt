@@ -7,6 +7,7 @@ import api.testdata.TestData
 import api.utils.RegistrationApi
 import api.utils.UserApi
 import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
@@ -15,7 +16,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 
-
+@Tag("apiTests")
 class UserTest {
     @Test
     @DisplayName("GET /Проверка аватара и Id на 2 странице")

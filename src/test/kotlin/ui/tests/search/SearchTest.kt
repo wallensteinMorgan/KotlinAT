@@ -2,6 +2,7 @@ package ui.tests.search
 
 import io.qameta.allure.Description
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import ui.base.BasePage
 import ui.pages.MainPage
@@ -10,7 +11,7 @@ import ui.pages.MainPage
 const val TEXT_FOR_SEARCH = "iPhone 15 Pro"
 const val SEARCH_STRING  = "Чем iPhone 13 отличается от iPhone 12"
 const val KEY_WORD = "iphone-13"
-
+@Tag("uiTests")
 class SearchTest : BasePage() {
     @Test
     @Description("Поиск по запросу")

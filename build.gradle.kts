@@ -45,21 +45,28 @@ tasks.test {
     }
 
 tasks.register<Test>("apiTests") {
-    useJUnitPlatform()
-    filter {
-        includeTestsMatching("api.tests.*")
-        includeTestsMatching("api.*")
+    useJUnitPlatform {
+        includeTags("apiTests")
     }
     systemProperty("allure.results.directory", "${project.buildDir}/allure-results")
+
+    testLogging {
+        events("passed", "skipped", "failed")
+        showStandardStreams = true
+    }
 }
 
+
 tasks.register<Test>("uiTests") {
-    useJUnitPlatform()
-    filter {
-        includeTestsMatching("ui.tests.*")
-        includeTestsMatching("ui.*")
+    useJUnitPlatform {
+        includeTags("uiTests")
     }
     systemProperty("allure.results.directory", "${project.buildDir}/allure-results")
+
+    testLogging {
+        events("passed", "skipped", "failed")
+        showStandardStreams = true
+    }
 }
     kotlin {
         jvmToolchain(17)
