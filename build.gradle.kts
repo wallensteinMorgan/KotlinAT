@@ -46,26 +46,14 @@ tasks.test {
 
 tasks.register<Test>("apiTests") {
     useJUnitPlatform {
-        includeTags("apiTests")
-    }
-    systemProperty("allure.results.directory", "${project.buildDir}/allure-results")
-
-    testLogging {
-        events("passed", "skipped", "failed")
-        showStandardStreams = true
+        includeTags("API")
     }
 }
 
 
 tasks.register<Test>("uiTests") {
     useJUnitPlatform {
-        includeTags("uiTests")
-    }
-    systemProperty("allure.results.directory", "${project.buildDir}/allure-results")
-
-    testLogging {
-        events("passed", "skipped", "failed")
-        showStandardStreams = true
+        includeTags("UI")
     }
 }
     kotlin {

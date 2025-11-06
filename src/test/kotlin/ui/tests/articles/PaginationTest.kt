@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import ui.base.BasePage
 import ui.pages.MainPage
 import kotlin.test.assertTrue
-@Tag("uiTests")
+@Tag("UI")
 class PaginationTest : BasePage(){
     @Test
     @Description("Проверка пагинации и что на второй странице статьи отличаются от первой")

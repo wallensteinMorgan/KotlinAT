@@ -11,7 +11,7 @@ import ui.pages.MainPage
 const val TEXT_FOR_SEARCH = "iPhone 15 Pro"
 const val SEARCH_STRING  = "Чем iPhone 13 отличается от iPhone 12"
 const val KEY_WORD = "iphone-13"
-@Tag("uiTests")
+@Tag("UI")
 class SearchTest : BasePage() {
     @Test
     @Description("Поиск по запросу")

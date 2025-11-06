@@ -8,7 +8,7 @@ import ui.pages.MainPage
 
 
 import kotlin.test.assertEquals
-@Tag("uiTests")
+@Tag("UI")
 class OpeningAnArticleTest: BasePage() {
 @Test
 @Description("Открывается первая статья на главной странице и проводится сравнение заголовков")

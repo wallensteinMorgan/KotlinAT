@@ -16,7 +16,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 
-@Tag("apiTests")
+@Tag("API")
 class UserTest {
     @Test
     @DisplayName("GET /Проверка аватара и Id на 2 странице")

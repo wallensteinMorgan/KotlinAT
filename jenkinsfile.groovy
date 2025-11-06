@@ -6,6 +6,13 @@ base_git_url = "https://github.com/wallensteinMorgan/KotlinAT.git"
 
 node {
     withEnv(["branch=${branch_cutted}", "base_url=${base_git_url}"]) {
+        stage("Debug Workspace") {
+            echo "Workspace: ${env.WORKSPACE}"
+            // Для Windows-агента
+            bat "dir ${env.WORKSPACE}"
+            // Для Linux-агента
+            // sh "ls -la ${env.WORKSPACE}"
+        }
         stage("Checkout Branch") {
             if (!"$branch_cutted".contains("main")) {
                 try {
@@ -56,27 +63,21 @@ def getTestStages(testTags) {
     }
     return stages
 }
+
+
 def runTestWithTag(String tag) {
     try {
-        echo "Running ${tag} tests"
-        // Даем права на выполнение и запускаем gradlew
-        sh """
-            chmod +x ./gradlew
-            ./gradlew clean ${tag}
-        """
-    } catch (err) {
-        echo "Some tests failed in ${tag}: ${err}"
-        currentBuild.result = 'UNSTABLE'
+        labelledShell(label: "Run ${tag}",
+                script: """
+                cd ${env.WORKSPACE}
+                chmod +x ./gradlew
+                ./gradlew ${tag}
+            """
+        )
+    } finally {
+        echo "some failed tests"
     }
 }
-
-//def runTestWithTag(String tag) {
-//    try {
-//        labelledShell(label: "Run ${tag}", script: "chmod +x gradlew \n./gradlew -x test ${tag}")
-//    } finally {
-//        echo "some failed tests"
-//    }
-//}
 
 def getProject(String repo, String branch) {
     cleanWs()

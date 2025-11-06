@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test
 import ui.base.BasePage
 import ui.pages.MainPage
 import kotlin.test.assertTrue
-@Tag("uiTests")
+@Tag("UI")
 class MenuNavigationTest: BasePage() {
     @Test
     @Description("Проверка работоспособности категорий на главной странице")
